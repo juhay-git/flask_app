@@ -41,6 +41,25 @@ def lisaa_tietokantaan():
 
     return(json.dumps(uusimittaus))
 
+@app.route('/api/haekannasta', methods=['GET'])
+def hae_tietokannasta():
+    con = sqlite3.connect("mittaukset.db3")
+    cur = con.cursor()
+    cur.execute("SELECT paiva, mittaus FROM mittaukset")
+
+    tiedot = cur.fetchall()
+    kantatiedot = list()
+    
+    for paiva in tiedot:
+        temp = dict(x=paiva[0], y=paiva[1])
+        kantatiedot.append(temp)
+    
+    con.commit()
+    con.close()
+
+    return render_template("mittaukset.html", taulukko=kantatiedot, paivat=paivat)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

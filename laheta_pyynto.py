@@ -9,5 +9,5 @@ while(True):
     mittaus["y"] = int(input("Anna päivän lämpötila >"))
 
     viesti = json.dumps(mittaus)
-    vastaus = requests.post('http://localhost:5000/lisaa', data=viesti)
+    vastaus = requests.post('http://localhost:5000/lisaakantaan', data=viesti)
 
