@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/b50b5d9d-2b0e-41bd-8338-fc588d96cddd/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/mittaukset-flask-jyh",
+    "appService.deploySubpath": "."
+}
